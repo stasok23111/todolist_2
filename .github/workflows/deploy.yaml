@@ -1,9 +1,11 @@
-name: Build and Deploy
+name: 'Build and Deploy'
 
 on:
-  push:
-    branches:
-      -main
+  workflow_dispatch:
+    push:
+      branches:
+        - main
+
 
 
 jobs:
@@ -25,4 +27,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/todolist_2:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/todolist_2.1:latest
